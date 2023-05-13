@@ -20,7 +20,7 @@ Executing tasks through make targets
 Default target and PHONY target
 Makefile’s variables and macro syntax
 
-## lifcycle
+## Lifecycle
 make build: Builds the static website files using Hugo. make serve: Runs a local development server to preview the website. make clean: Cleans the built website files and cache. make help: Show help for all command. make deploy: Deploys the website to the production server or platform. For additional commands and options, refer to the Makefile in the repository.
 
 Source Code Comments The source code of the Awesome Inc. website contains comments to provide clarity and guidance. Here are some important comments to note:
