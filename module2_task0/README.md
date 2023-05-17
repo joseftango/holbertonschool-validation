@@ -21,12 +21,10 @@ Default target and PHONY target
 Makefile’s variables and macro syntax
 
 ## Lifecycle
-make build: Builds the static website files using Hugo. make serve: Runs a local development server to preview the website. make clean: Cleans the built website files and cache. make help: Show help for all command. make deploy: Deploys the website to the production server or platform. For additional commands and options, refer to the Makefile in the repository.
-
-Source Code Comments The source code of the Awesome Inc. website contains comments to provide clarity and guidance. Here are some important comments to note:
-
-In config.toml, modify the configuration options such as site title, description, and navigation menu. Content files are located in the content/ directory. Each content page or blog post has a YAML front matter section at the top. Layout files are located in the layouts/ directory. Customize the templates according to your design requirements. Static assets like images, CSS, and JavaScript files can be placed in the static/ directory. For more detailed information about the code structure and specific functionalities, please refer to the comments within the source code files.
-
-
-
-
+"build": compile the source code of the application to a binary named awesome-api
+"clean": Stop the application. Delete the binary awesome-api and the log file awesome-api.log.
+"post": Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME.
+"help": Provides help about the commands.
+"test": You want to test it to ensure that it behaves as expected
+"run": Run the application in background by executing the binary awesome-api
+"stop": Stop the application with the command kill XXXXX where XXXXX is the Process ID of the application
