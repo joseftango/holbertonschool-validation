@@ -9,7 +9,7 @@ stop: ## Stop the application
 	pkill awesome-api
 
 clean:  ## cmmand that remove the dist directory
-	pkill awesome-api
+	rm -rf dist/
 	rm -f awesome-api
 	rm -f awesome-api.log
 
