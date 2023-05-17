@@ -9,8 +9,7 @@ stop: ## Stop the application
 	pkill awesome-api
 
 clean:  ## cmmand that remove the dist directory
-	rm -f awesome-api
-	rm -f awesome-api.log
+	rm awesome-api.log && rm awesome-api && make stop
 
 test:  ## test it to ensure that it behaves as expected
 	curl http://localhost:9999
