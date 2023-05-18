@@ -1,6 +1,5 @@
 build:  ## command that build our website
-	golangci-lint run
-	go build
+	go build -o awesome-api
 
 run:  ## Run the application in background by executing the binary awesome-api
 	./awesome-api >./awesome.log 2>&1 &
@@ -20,4 +19,4 @@ help:  ## list of targets and their usage
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 lint:  ## linter is able to catch such errors
-	golangci-lint run
+	golangci-lint run ./main.go
