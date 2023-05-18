@@ -1,6 +1,6 @@
 build:  ## command that build our website
-	hugo
-	go build -o awesome-api
+	golangci-lint run
+	go build
 
 run:  ## Run the application in background by executing the binary awesome-api
 	./awesome-api >./awesome.log 2>&1 &
