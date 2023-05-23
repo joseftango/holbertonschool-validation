@@ -30,12 +30,11 @@ integration-tests:	## using Integration-tests
 	go test -v -tags=integration -coverprofile=coverage-integrations.out
 
 check: ## Check markdown of all the files
-	markdownlint README.md content/posts/
-	markdown-link-check README.md content/posts/
+	markdownlint ./content/posts/*.md
+	markdown-link-check ./content/posts/*.md
 
 validate: ## command to validate the file ./dist/index.html
-	make build
-	python3 /opt/W3C-Validator/w3c_validator.py dist/index.html
+	python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html
 
 help:  ## list of targets and their usage
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
