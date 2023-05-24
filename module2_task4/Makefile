@@ -1,42 +1,22 @@
-build:  ## command that build our website
+build: ## execute a command that create a new blog
 	markdownlint README.md content/posts/
 	markdown-link-check README.md content/posts/
 	hugo
 
-run:  ## Run the application in background by executing the binary awesome-api
-	./awesome-api >./awesome.log 2>&1 &
+check: ## check
+	markdownlint README.md content/posts/
+	markdown-link-check README.md content/posts/
 
-post:  ## create a post
+clean: ## execute a command that clean the dist directory
+	rm -rf dist
+
+validate: ## validation
+	python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html || true
+
+
+post:  ## execute a command that create a new post
 	hugo new posts/$(POST_NAME).md
 	sed -i 's/title: .*/title:"$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 
-stop: ## Stop the application
-	pkill awesome-api
-
-clean:  ## cmmand that remove the dist directory
-	rm -f awesome-api awesome-api.log coverage-units.out coverage-integrations.out
-	rm -rf ./dist
-
-test:  ## test it to ensure that it behaves as expected
-	curl http://localhost:9999
-	curl http://localhost:9999/health
-
-lint:  ## linter is able to catch such errors
-	golangci-lint run ./main.go
-
-unit-tests:	## using Unittest
-	go test -v -short -coverprofile=coverage-units.out
-
-integration-tests:	## using Integration-tests
-	go test -v -tags=integration -coverprofile=coverage-integrations.out
-
-check: ## Check markdown of all the files
-	markdownlint ./content/posts/*.md
-	markdown-link-check ./content/posts/*.md
-
-validate: ## command to validate the file ./dist/index.html
-	python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html
-
-help:  ## list of targets and their usage
+help:  ## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
-
