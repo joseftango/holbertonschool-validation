@@ -1,6 +1,7 @@
 build:  ## command that build our website
-	go build -o awesome-api
-	hugo -d dist/
+	markdownlint README.md content/posts/
+	markdown-link-check README.md content/posts/
+	hugo
 
 run:  ## Run the application in background by executing the binary awesome-api
 	./awesome-api >./awesome.log 2>&1 &
