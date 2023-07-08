@@ -1,4 +1,4 @@
-module github.com/joseftango/awesome-api
+module github.com/Lestt/awesome-api
 
 go 1.13
 

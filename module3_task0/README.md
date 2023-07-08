@@ -33,9 +33,3 @@ Makefile’s variables and macro syntax
 * "integration-tests": to validate that the functions are behaving as expected
 * "check": Check markdown of all the files
 * "validate": command to validate the file ./dist/index.html
-
-## Workflow:
-* The original workflow file <...>/.github/workflows/module3_task0.yml must be:
- - Present with a valid YAML syntax
- - It must be a valid GitHub action workflow with 1 job and 2 steps
- - It must be have 2 triggers
